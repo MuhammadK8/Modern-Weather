@@ -62,7 +62,7 @@ nav ul li a:hover {
 }
 
 .content h1 {
-    font-size: 160px;
+    font-size: 575%; 
     color: #fff;
     font-weight: 600;
     transition: 0.5s;
@@ -79,7 +79,7 @@ nav ul li a:hover {
     display: inline-block;
     background: transparent;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 150%;
     border: 2px solid #fff;
     padding: 14px 70px;
     border-radius: 50px;
