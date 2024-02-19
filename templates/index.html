@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- The document type declaration, specifying this document is HTML5. -->
+<html lang="en">
+<!-- The root element with a language attribute set to English. -->
+
+<head>
+    <!-- The head element contains meta-information about the document. -->
+    <meta charset="UTF-8">
+    <!-- Character set declaration for universal character support. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the site is responsive and scales nicely on different devices. -->
+    <title>Get Weather Conditions</title>
+    <!-- The title of the document shown in the browser's title bar or tab. -->
+    <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
+    <!-- Link to an external CSS file for styling. The url_for function is used to locate the file within the Flask application's static directory. -->
+</head>
+
+<body>
+    <!-- The body element contains the content of the document. -->
+    <h1>
+        Get Weather Conditions
+    </h1>
+    <!-- A header that introduces the content or purpose of the page. -->
+
+    <form action="/weather">
+        <!-- A form that sends a GET request to the /weather route upon submission. -->
+        <input type="text" name="city" id="city" placeholder="Enter a City" />
+        <!-- An input field for the user to enter a city name. -->
+        <button class="button-85" type="submit">Submit</button>
+        <!-- A submit button for the form. The class "button-85" is likely defined in the linked CSS file for styling. -->
+    </form>
+
+</body>
+
+</html>

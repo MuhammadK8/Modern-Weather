@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Defines the document type and version of HTML (HTML5 in this case). -->
+
+<html lang="en">
+<!-- Sets the language of the document's content to English for accessibility and search engine optimization. -->
+
+<head>
+    <!-- Contains metadata about the HTML document. -->
+    <meta charset="UTF-8">
+    <!-- Specifies the character encoding for the document (UTF-8 for universal character support). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the page is responsive and scales properly on all devices. -->
+    <title>City Not Found</title>
+    <!-- Sets the title of the document, which appears in the browser's title bar or tab. -->
+    <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
+    <!-- Links to an external CSS file for styling. Flask's url_for function dynamically finds the path to the 'styles/style.css' file in the static directory. -->
+</head>
+
+<body>
+    <!-- Contains the content of the HTML document that will be visually displayed in the web browser. -->
+    <h1>
+        City Not Found
+    </h1>
+    <!-- The main heading indicating the primary issue encountered. -->
+    <h2>
+        Please Try Again
+    </h2>
+    <!-- A secondary heading prompting the user to attempt another search. -->
+
+    <form action="/weather">
+        <!-- A form that submits a GET request to the /weather route when the user submits a city name. -->
+        <input type="text" name="city" id="city" placeholder="Enter a City" />
+        <!-- An input field for the user to enter a city name. The placeholder provides a hint to the user about what to enter. -->
+        <button class="button-85" type="submit">Submit</button>
+        <!-- A submit button with a class for styling. When clicked, it submits the form data to the server. -->
+    </form>
+
+</body>
+
+</html>
