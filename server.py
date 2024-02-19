@@ -52,7 +52,9 @@ def get_weather():
                         title=weather_data["name"],
                         status=weather_data["weather"][0]["description"].capitalize(),
                         temp=f"{weather_data['main']['temp']:.1f}",
-                        feels_like=f"{weather_data['main']['feels_like']:.1f}"
+                        feels_like=f"{weather_data['main']['feels_like']:.1f}",
+                        humidity=weather_data["main"]["humidity"],
+                        wind_speed=f"{weather_data['wind']['speed']:.1f}"
                         )
 
 # The application entry point

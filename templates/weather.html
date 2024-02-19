@@ -25,6 +25,10 @@
     <!-- A paragraph displaying the current weather status and temperature, using the 'status' and 'temp' variables. The &deg;F represents degrees Fahrenheit. -->
     <p> Feels like {{ feels_like }} &deg;F</p>
     <!-- Another paragraph showing the perceived temperature, with the value dynamically provided by the 'feels_like' variable. -->
+    <p> Wind speed is {{wind_speed}}mph</p>
+    <!-- Paragraph displaying the wind speed, with the value dynamically provided by the 'wind_speed' variable. The mph represents miles per hour. -->
+    <p> The humidity is {{humidity}}&percnt;</p>
+    <!-- A paragraph showing the humidity percentage, with the value dynamically provided by the 'humidity' variable. The &percnt; represents the percent symbol. -->
 
     <form action="/weather">
         <!-- A form that submits a GET request to the /weather route, allowing users to enter a different city for weather information. -->
