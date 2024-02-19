@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<!-- The document type declaration, specifying this document is HTML5. -->
-<html lang="en">
-<!-- The root element with a language attribute set to English. -->
+<html>
 
 <head>
-    <!-- The head element contains meta-information about the document. -->
-    <meta charset="UTF-8">
-    <!-- Character set declaration for universal character support. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ensures the site is responsive and scales nicely on different devices. -->
     <title>Get Weather Conditions</title>
-    <!-- The title of the document shown in the browser's title bar or tab. -->
-    <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
-    <!-- Link to an external CSS file for styling. The url_for function is used to locate the file within the Flask application's static directory. -->
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- The body element contains the content of the document. -->
-    <h1>
-        Get Weather Conditions
-    </h1>
-    <!-- A header that introduces the content or purpose of the page. -->
+    <div class="hero">
 
-    <form action="/weather">
-        <!-- A form that sends a GET request to the /weather route upon submission. -->
-        <input type="text" name="city" id="city" placeholder="Enter a City" />
-        <!-- An input field for the user to enter a city name. -->
-        <button class="button-85" type="submit">Submit</button>
-        <!-- A submit button for the form. The class "button-85" is likely defined in the linked CSS file for styling. -->
-    </form>
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="{{url_for('static', filename='intro.mp4')}}" type="video/mp4">
+        </video>
 
+        <nav>
+            <img src="{{url_for('static', filename='logo.png')}}" class="logo" />
+            <ul>
+                <li><a href="{{url_for('index')}}">HOME</a></li>
+                <li><a href="{{url_for('index')}}">POPULAR CITIES</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>Weather</h1>
+            <form action="/weather">
+                <input type="text" name="city" id="city" placeholder="Enter a City" />
+                <!-- <button class="button" type="submit">Submit</button> -->
+            </form>
+        </div>
+
+    </div>
 </body>
 
 </html>

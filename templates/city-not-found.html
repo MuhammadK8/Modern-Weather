@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<!-- Defines the document type and version of HTML (HTML5 in this case). -->
-
-<html lang="en">
-<!-- Sets the language of the document's content to English for accessibility and search engine optimization. -->
+<html>
 
 <head>
-    <!-- Contains metadata about the HTML document. -->
-    <meta charset="UTF-8">
-    <!-- Specifies the character encoding for the document (UTF-8 for universal character support). -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ensures the page is responsive and scales properly on all devices. -->
     <title>City Not Found</title>
-    <!-- Sets the title of the document, which appears in the browser's title bar or tab. -->
     <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
-    <!-- Links to an external CSS file for styling. Flask's url_for function dynamically finds the path to the 'styles/style.css' file in the static directory. -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Contains the content of the HTML document that will be visually displayed in the web browser. -->
-    <h1>
-        City Not Found
-    </h1>
-    <!-- The main heading indicating the primary issue encountered. -->
-    <h2>
-        Please Try Again
-    </h2>
-    <!-- A secondary heading prompting the user to attempt another search. -->
+    <div class="hero">
 
-    <form action="/weather">
-        <!-- A form that submits a GET request to the /weather route when the user submits a city name. -->
-        <input type="text" name="city" id="city" placeholder="Enter a City" />
-        <!-- An input field for the user to enter a city name. The placeholder provides a hint to the user about what to enter. -->
-        <button class="button-85" type="submit">Submit</button>
-        <!-- A submit button with a class for styling. When clicked, it submits the form data to the server. -->
-    </form>
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="{{url_for('static', filename='intro.mp4')}}" type="video/mp4">
+        </video>
 
+        <nav>
+            <img src="{{url_for('static', filename='logo.png')}}" class="logo" />
+            <ul>
+                <li><a href="{{url_for('index')}}">HOME</a></li>
+                <li><a href="{{url_for('index')}}">POPULAR CITIES</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>Weather</h1>
+            <h2>City Not Found &#183; Try Again</h2>
+            <form action="/weather">
+                <input type="text" name="city" id="city" placeholder="Enter a City" />
+            </form>
+        </div>
+
+    </div>
 </body>
 
 </html>

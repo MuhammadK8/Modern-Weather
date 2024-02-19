@@ -1,99 +1,112 @@
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", "sans-serif";
+    font-weight: 200;
+    font-style: normal;
+    color: #d6d6d6;
 }
 
-/* Resets margin and padding for all elements to ensure a consistent layout across browsers. Sets the box-sizing to border-box to include padding and border in the element's total width and height. */
-
-body {
-    padding: 2rem;
-    background-color: #333;
-    color: whitesmoke;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    font-size: 2rem;
-}
-
-/* Styles the <body> to have a dark background, light text color, and ensures it fills at least the full height of the viewport. Uses Flexbox to center its children vertically and space them out evenly. */
-
-input {
-    font-size: 2rem;
-    padding: 1rem;
-    border-radius: 10px;
-    vertical-align: top;
-    background-color: rgb(182, 181, 181);
-}
-
-/* Styles input elements to be larger and easier to interact with, with rounded corners and a light gray background. */
-
-.button-85 {
-    vertical-align: top;
-    padding: 2em 3em;
-    border: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-
-/* Creates a stylized button with significant padding, no border, a dark background, and rounded corners. It also disables text selection for a better user experience. */
-
-.button-85:before {
-    content: "";
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing-button-85 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-}
-
-/* Adds a glowing effect to the button with a colorful gradient background. The animation creates a moving glow effect around the button. */
-
-@keyframes glowing-button-85 {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
-}
-
-/* Defines the animation for the glowing effect, making the gradient move across the button. */
-
-.button-85:after {
-    z-index: -1;
-    content: "";
-    position: absolute;
+.hero {
     width: 100%;
-    height: 100%;
-    background: #222;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12, 3, 51, 0.3), rgba(12, 3, 51, 0.3));
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Adds an overlay to the button to enhance the glow effect, ensuring it matches the button's shape and size. */
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    width: 80px;
+    transition: 0.5s;
+}
+
+nav .logo:hover {
+    opacity: 60%;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffff;
+    font-size: 17px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 160px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.content h1:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    cursor: default;
+}
+
+.content input {
+    text-decoration: none;
+    display: inline-block;
+    background: transparent;
+    color: #ffffff;
+    font-size: 24px;
+    border: 2px solid #fff;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.content input::placeholder {
+    color: #d6d6d6;
+}
+
+.back-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .back-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .back-video {
+        width: auto;
+        height: 100%;
+    }
+}

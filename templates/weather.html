@@ -1,43 +1,42 @@
 <!DOCTYPE html>
-<!-- The document type declaration, specifying this document is HTML5. -->
-<html lang="en">
-<!-- The root element with a language attribute set to English for accessibility and search engine optimization. -->
+<html>
 
 <head>
-    <!-- The head element contains meta-information about the document. -->
-    <meta charset="UTF-8">
-    <!-- Character set declaration to ensure the document uses UTF-8 encoding, supporting a wide range of characters. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Viewport settings to ensure the site is responsive and renders well on various devices. -->
-    <title>{{ title }} Weather</title>
-    <!-- Dynamic title that changes based on the 'title' variable passed to the template, indicating the city's weather being displayed. -->
-    <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
-    <!-- Link to an external CSS file for styling, using Flask's url_for function to generate the URL based on the application's static file structure. -->
+    <title>Get Weather Conditions</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- The body element contains the content that will be displayed in the browser. -->
-    <h1>
-        {{ title }} Weather
-    </h1>
-    <!-- A header displaying the weather for a specific city, with the city's name dynamically inserted via the 'title' variable. -->
-    <p> {{ status }} and {{ temp }} &deg;F</p>
-    <!-- A paragraph displaying the current weather status and temperature, using the 'status' and 'temp' variables. The &deg;F represents degrees Fahrenheit. -->
-    <p> Feels like {{ feels_like }} &deg;F</p>
-    <!-- Another paragraph showing the perceived temperature, with the value dynamically provided by the 'feels_like' variable. -->
-    <p> Wind speed is {{wind_speed}}mph</p>
-    <!-- Paragraph displaying the wind speed, with the value dynamically provided by the 'wind_speed' variable. The mph represents miles per hour. -->
-    <p> The humidity is {{humidity}}&percnt;</p>
-    <!-- A paragraph showing the humidity percentage, with the value dynamically provided by the 'humidity' variable. The &percnt; represents the percent symbol. -->
+    <div class="hero">
 
-    <form action="/weather">
-        <!-- A form that submits a GET request to the /weather route, allowing users to enter a different city for weather information. -->
-        <input type="text" name="city" id="city" placeholder="Enter a City" />
-        <!-- An input field where users can type the name of a city they wish to get weather information for. -->
-        <button class="button-85" type="submit">Submit</button>
-        <!-- A submit button with class "button-85" for styling, likely defined in the linked CSS file. -->
-    </form>
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="{{url_for('static', filename='intro.mp4')}}" type="video/mp4">
+        </video>
 
+        <nav>
+            <img src="{{url_for('static', filename='logo.png')}}" class="logo" />
+            <ul>
+                <li><a href="{{url_for('index')}}">HOME</a></li>
+                <li><a href="{{url_for('index')}}">POPULAR CITIES</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>Weather</h1>
+            <h2> {{ title }}'s Weather </h2>
+            <p> {{ status }} and {{ temp }} &deg;F</p>
+            <p> Feels like {{ feels_like }} &deg;F</p>
+            <p> Wind speed is {{wind_speed}}mph</p>
+            <p> The humidity is {{humidity}}&percnt;</p>
+            <form action="/weather">
+                <input type="text" name="city" id="city" placeholder="Enter a City" />
+            </form>
+        </div>
+
+    </div>
 </body>
 
 </html>
