@@ -62,7 +62,7 @@ nav ul li a:hover {
 }
 
 .content h1 {
-    font-size: 575%; 
+    font-size: 575%;
     color: #fff;
     font-weight: 600;
     transition: 0.5s;
@@ -97,6 +97,25 @@ nav ul li a:hover {
     z-index: -1;
 }
 
+@keyframes pulseAnimation {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+input[type="text"]#city.pulse {
+    animation: pulseAnimation 3s infinite ease-in-out;
+}
+
+
 @media (min-aspect-ratio: 16/9) {
     .back-video {
         width: 100%;
@@ -108,5 +127,12 @@ nav ul li a:hover {
     .back-video {
         width: auto;
         height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: calc(100vh - 80px);
+        /* Adjust only for screens smaller than 768px */
     }
 }
