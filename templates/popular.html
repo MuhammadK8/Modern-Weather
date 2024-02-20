@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>Popular Cities</title>
     <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,11 @@
         </nav>
         <div class="content">
             <h1>Weather</h1>
+            <li><a href="{{url_for('get_weather', city='New York City')}}" class="popular-city"> New York City </a></li>
+            <li><a href="{{url_for('get_weather', city='Miami')}}" class="popular-city"> Miami </a></li>
+            <li><a href="{{url_for('get_weather', city='Los Angeles')}}" class="popular-city"> Los Angeles </a></li>
+            <li> <a href="{{url_for('get_weather', city='San Francisco')}}" class="popular-city"> San Francisco </a></li>
+            <li><a href="{{url_for('get_weather', city='Washington D.C.')}}" class="popular-city"> Washington D.C. </a></li>
             <form action="/weather">
                 <input type="text" name="city" id="city" class="pulse" placeholder="Enter a City" />
                 <!-- <button class="button" type="submit">Submit</button> -->
@@ -51,7 +56,6 @@
             input.addEventListener('input', togglePulsing);
         });
     </script>
-
 </body>
 
 </html>

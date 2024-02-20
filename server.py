@@ -22,6 +22,10 @@ def index():
     # Render and return the index.html template
     return render_template('index.html')
 
+@app.route('/popular')
+def popular():
+    return render_template('popular.html')
+
 # Define the route for fetching and displaying weather information
 @app.route('/weather')
 def get_weather():
@@ -45,7 +49,7 @@ def get_weather():
     if not weather_data["cod"] == 200:
         # Render and return the city-not-found.html template if the city is not found
         return render_template('city-not-found.html')
-    
+        
     # Render and return the weather.html template with weather data if the city is found
     return render_template(
                         "weather.html", 
@@ -56,6 +60,8 @@ def get_weather():
                         humidity=weather_data["main"]["humidity"],
                         wind_speed=f"{weather_data['wind']['speed']:.1f}"
                         )
+
+
 
 # The application entry point
 if __name__ == "__main__":
