@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>Modern·Weather</title>
     <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,11 +12,9 @@
 
 <body>
     <div class="hero">
-
         <video autoplay loop muted playsinline class="back-video">
             <source src="{{url_for('static', filename='intro.mp4')}}" type="video/mp4">
         </video>
-
         <nav>
             <img src="{{url_for('static', filename='logo.png')}}" class="logo" />
             <ul>
@@ -28,30 +26,18 @@
             <h1>Weather</h1>
             <form action="/weather">
                 <input type="text" name="city" id="city" class="pulse" placeholder="Enter a City" />
-                <!-- <button class="button" type="submit">Submit</button> -->
             </form>
         </div>
-
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var input = document.getElementById('city'); // Targeting the input field by its ID
-
-            // Function to toggle pulsing based on input
+            var input = document.getElementById('city');
             function togglePulsing() {
-                if (input.value.length > 0) {
-                    // Remove pulse class if there's input
-                    input.classList.remove('pulse');
-                } else {
-                    // Add pulse class if input is empty
-                    input.classList.add('pulse');
-                }
+                input.classList.toggle('pulse', input.value.length === 0);
             }
-
             input.addEventListener('input', togglePulsing);
         });
     </script>
-
 </body>
 
 </html>

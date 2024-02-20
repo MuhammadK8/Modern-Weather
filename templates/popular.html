@@ -29,11 +29,12 @@
             <li><a href="{{url_for('get_weather', city='New York City')}}" class="popular-city"> New York City </a></li>
             <li><a href="{{url_for('get_weather', city='Miami')}}" class="popular-city"> Miami </a></li>
             <li><a href="{{url_for('get_weather', city='Los Angeles')}}" class="popular-city"> Los Angeles </a></li>
-            <li> <a href="{{url_for('get_weather', city='San Francisco')}}" class="popular-city"> San Francisco </a></li>
-            <li><a href="{{url_for('get_weather', city='Washington D.C.')}}" class="popular-city"> Washington D.C. </a></li>
+            <li> <a href="{{url_for('get_weather', city='San Francisco')}}" class="popular-city"> San Francisco </a>
+            </li>
+            <li><a href="{{url_for('get_weather', city='Washington D.C.')}}" class="popular-city"> Washington D.C. </a>
+            </li>
             <form action="/weather">
                 <input type="text" name="city" id="city" class="pulse" placeholder="Enter a City" />
-                <!-- <button class="button" type="submit">Submit</button> -->
             </form>
         </div>
 

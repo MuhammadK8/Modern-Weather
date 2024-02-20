@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Conditions</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
@@ -12,13 +12,11 @@
 
 <body>
     <div class="hero">
-
         <video autoplay loop muted playsinline class="back-video">
-            <source src="{{url_for('static', filename='intro.mp4')}}" type="video/mp4">
+            <source src="{{url_for('static', filename=back_video)}}" type="video/mp4">
         </video>
-
         <nav>
-            <img src="{{url_for('static', filename='logo.png')}}" class="logo" />
+            <img src="{{url_for('static', filename=status_image)}}" class="logo">
             <ul>
                 <li><a href="{{url_for('index')}}">HOME</a></li>
                 <li><a href="{{url_for('popular')}}">POPULAR CITIES</a></li>
@@ -26,33 +24,22 @@
         </nav>
         <div class="content">
             <h1>Weather</h1>
-            <h2> {{ title }}'s Weather </h2>
-            <p> {{ status }} and {{ temp }} &deg;F</p>
-            <p> Feels like {{ feels_like }} &deg;F</p>
-            <p> Wind speed is {{wind_speed}}mph</p>
-            <p> The humidity is {{humidity}}&percnt;</p>
+            <h2>{{ title }}'s Weather</h2>
+            <p>{{ status }} and {{ temp }} &deg;F</p>
+            <p>Feels like {{ feels_like }} &deg;F</p>
+            <p>Wind speed is {{wind_speed}} mph</p>
+            <p>The humidity is {{humidity}}%</p>
             <form action="/weather">
-                <input type="text" name="city" id="city" class="pulse" placeholder="Enter a City" />
-                <!-- <button class="button" type="submit">Submit</button> -->
+                <input type="text" name="city" id="city" class="pulse" placeholder="Enter a City">
             </form>
         </div>
-
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var input = document.getElementById('city'); // Targeting the input field by its ID
-
-            // Function to toggle pulsing based on input
+            var input = document.getElementById('city');
             function togglePulsing() {
-                if (input.value.length > 0) {
-                    // Remove pulse class if there's input
-                    input.classList.remove('pulse');
-                } else {
-                    // Add pulse class if input is empty
-                    input.classList.add('pulse');
-                }
+                input.classList.toggle('pulse', !input.value);
             }
-
             input.addEventListener('input', togglePulsing);
         });
     </script>
